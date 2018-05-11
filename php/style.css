@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: snow;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    font-family: fantasy;
+    font-size: 90px;
+    text-shadow: black 0 0 2px;
+    text-align: center;
+    color: white;
+}
+.container {
+    background-image: url(https://www.telegraf-spb.ru/published/publicdata/B622311/attachments/SC/products_pictures/voenniy_flag_japonii_1_enl.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.info {
+    background: snow;
+    margin: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 20px;
+    font-size: 19px;
+}
+.photo {
+    margin: 5px;
+}
+
+.menu {
+    margin: auto;
+}
+.menu:before, .menu:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.menu__list {
+    margin: auto;
+    display: table;
+    padding: 0;
+    list-style: none;
+}
+.menu__item {
+    margin: 0;
+    padding: 0;
+    float: left;
+    border-right: 1px solid #666;
+}
+.menu__item:last-child {
+    border-right: none;
+}
+.menu__link {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    background: #f9f9f9;
+    color: #ee1b2e;
+    font-size: 25px;
+    font-family: fantasy;
+    border-radius: 50%;
+}
+.menu__link:hover {
+    text-decoration: none;
+    background: red;
+    color: snow;
+}
+
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.6);
+    display: none;
+}
+.modal-bg.active {
+    display: block;
+}
+
+.modal {
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    display: none;
+
+}
+.modal.active {
+    display: table;
+}
+.modal__container {
+    position: fixed;
+    padding: 15px;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    max-width: 900px;
+}
+
