@@ -1,0 +1,76 @@
+		body { background: snow;
+			}
+		div {
+			box-sizing: border-box;
+		}
+		div:before, div:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.chat {
+			border: 2px solid #eee;
+		}
+		.chat__content, .chat__sidebar {
+			float: left;
+		}
+		.chat__content {
+			width: 80%;
+			position: relative;
+		}
+		.chat__wall {
+			height: 300px;
+			border: 2px solid #eee;
+			overflow-y: scroll;
+			background: white;
+		}
+		.chat__message {
+			float: left;
+			padding: 5px 15px;
+			border-radius: 10px;
+			background: #a6fcd5;
+			margin: 5px;
+			clear: both;
+		}
+		.chat__message_right {
+			float: right;
+			background: #bee5f4;
+		}
+		
+		.chat__name {
+			text-align: center;
+		}
+		.chat__input, .chat__button {
+			border: 2px solid #eee;
+			padding: 5px 10px;
+			margin: 0;
+		}
+		.chat__button {
+			text-align: center;
+		}
+		
+		.chat__sidebar {
+			width: 20%;
+		}
+		.chat__avatar {
+			border-radius: 50%;
+			background: #eee;
+			width: 380px;
+			max-width: 100%;
+			height: auto;
+			background: url("photo.png") no-repeat; background-position:center;
+		}
+		.up, .down {
+			position: absolute; 
+			right: 2%;
+			opacity: 0.3; 
+			display: none; /* спрятать блок */
+			cursor: pointer;
+
+		}	
+		.up {
+			top: 5%;
+		}
+		.down {
+			bottom: 13%;
+		}

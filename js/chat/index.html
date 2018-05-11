@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Work</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="chat">
+			<div class="chat__content">
+				<div class="chat__wall">
+					<div class="up">
+						<img src="up.png">	
+					</div>
+					<div class="down">
+							<img src="down.png">
+					</div>
+				</div>
+				<div class="chat__input_box">
+					<input class="chat__input" type="text" name="text" placeholder="What does the fox say?" />
+					<button class="chat__button" type="button">Sent</button>
+				</div>
+			</div>
+			<div class="chat__sidebar">
+				<div class="chat__avatar"></div>
+				<div class="chat__name"><h2>Вася Пупкин</h2></div>
+			</div>
+		</div>
+	</div>
+	<script>
+
+		function avatar() {
+
+			var avatar = document.querySelector( '.chat__avatar' );
+
+			var ava_width = avatar.offsetWidth;
+
+			avatar.style.height = ava_width + "px";
+
+			console.log( ava_width );
+
+		}
+
+		avatar ();
+
+		function send_text( text, class_name ){
+			
+			if( text == '' ) {
+				return;
+			}
+
+			var date = new Date();
+
+			var options = {
+
+		      year: 'numeric',
+
+		      month: 'numeric',
+
+		      day: 'numeric',
+
+		      hour: 'numeric',
+
+		      minute: 'numeric',
+
+		      second: 'numeric'
+		    };
+
+			var d = document.createElement('div');
+
+			d.className = class_name;
+
+			d.innerHTML =  '<img src="photo.png" width="50" height="50">' + '   ( ' + date.toLocaleString('ru', options) + ' )  ' + text;	
+
+			document.querySelector(".chat__wall").appendChild( d );
+
+			document.querySelector(".chat__wall .chat__message:last-child").scrollIntoView();	
+		}
+
+		function agrigate_chat(){
+			var chat_input = document.querySelector(".chat__input");
+			var text = chat_input.value;
+
+			send_text( text, 'chat__message' ); 
+			
+			var reverse_text = '';
+			for( var i = text.length - 1; i >= 0; i-- ){
+				console.log( i + ' ' + text.charAt( i ) );
+				reverse_text += text.charAt( i );
+			}
+			
+			setTimeout(function(){
+				send_text( reverse_text, 'chat__message chat__message_right' ); 
+			}, 2000 );
+			
+			chat_input.value = '';
+			chat_input.focus();
+		}			
+
+		addEventListener( "keydown", function( event ) {
+
+			if ( event.keyCode == 13){
+				agrigate_chat();
+			}
+
+		});
+		
+		document.querySelector('.chat__button').addEventListener( 'click',function(event) {
+				agrigate_chat();
+		});
+		
+		window.onload = function() { 
+
+		var block = document.querySelector('.chat__wall');	
+
+		var scrollUp = document.querySelector('.up'); 
+
+		scrollUp.onmouseover = function() { 
+			scrollUp.style.opacity=0.9;
+		};
+
+		scrollUp.onmouseout = function() { 
+			scrollUp.style.opacity = 0.3;
+		};
+
+		scrollUp.onclick = function() { 
+ 			  block.scrollTop = 0;
+		};
+
+		var scrollDown = document.querySelector('.down'); 
+
+		scrollDown.onmouseover = function() { 
+			scrollDown.style.opacity=0.9;
+		};
+
+		block.onscroll = function() {
+			scrollDown.style.display='block';
+			scrollUp.style.display='block';
+		};
+
+		scrollDown.onmouseout = function() { 
+			scrollDown.style.opacity = 0.3;
+		};
+
+		scrollDown.onclick = function() { 
+ 			  block.scrollTop = block.scrollHeight;
+
+		};
+
+	};
+
+	</script>
+</body>
+</html>

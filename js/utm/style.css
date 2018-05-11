@@ -1,0 +1,49 @@
+body {
+    background: #dbdbdb;
+}
+h2 {
+    text-align: center;
+}
+.head {
+    text-align: center;
+    background: orange;
+    border-radius: 5%;
+    padding: 15px;
+    margin: 10px;
+}
+.description {
+    text-align: center;
+    background: #ffcd38;
+    border-radius: 5%;
+    padding: 15px;
+    margin: 10px;
+}
+.form-control {
+    display: block;
+
+    margin: 15px;
+    width: auto;
+}
+.generator {
+    background: rgba(0, 206, 0, 0.72);
+    padding: 15px;
+    border-radius: 5%;
+    font-size: 25px;
+}
+.inputs input {
+    width: 100%;
+    display: block;
+
+}
+.alert {
+    display: table;
+    margin: 0;
+    padding: 0;
+}
+.button {
+    margin: auto;
+    display: table;
+}
+.alert {
+    color: red;
+}
