@@ -1,0 +1,205 @@
+.primer1 {
+    position: relative;
+    height: 500px;
+    width: 800px;
+    margin: auto;
+
+}
+.sky {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    background: black;
+    animation: cromatic 30s infinite;
+    animation-timing-function: ease-out;
+}
+
+.ground {
+    height: 40%;
+    width: 100%;
+    background: green;
+    position: relative;
+}
+
+.stars {
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    background:white ;
+    animation: opacity 25s infinite;
+    opacity: 0;
+    animation-delay: 15s;
+}
+
+.star1 {
+    top:5%;
+    left: 11%;
+}
+
+.star2 {
+    top: 10%;
+    left: 7%;
+}
+
+.star3 {
+    top:7%;
+    left: 16%;
+}
+
+.star4 {
+    top:17%;
+    left:8%;
+}
+
+.star5 {
+    top:25%;
+    left: 23%;
+}
+
+.star6 {
+    top:22%;
+    left: 20%;
+}
+
+.star7 {
+    top:33%;
+    left: 5%;
+}
+
+.star8 {
+    top:30%;
+    left: 44%;
+}
+
+.star9 {
+    top: 40%;
+    left: 33%;
+}
+
+.star10 {
+    top:47%;
+    left: 57%;
+}
+
+.star11 {
+    top:10%;
+    left: 63%;
+}
+
+.star12 {
+    top:43%;
+    left: 60%;
+}
+
+.star13 {
+    top:50%;
+    left: 77%;
+}
+
+.star14 {
+    top:37%;
+    left: 66%;
+}
+
+.star15 {
+    top:24%;
+    left: 73%;
+}
+
+.star16 {
+    top: 47%;
+    left: 84%;
+}
+
+.star17 {
+    top: 32%;
+    left: 89%;
+}
+
+.star18 {
+    top:12%;
+    left: 80%;
+}
+
+.star19 {
+    top:17%;
+    left: 89%;
+}
+.star20 {
+    top:7%;
+    left: 96%;
+}
+.trees {
+    position: absolute;
+
+}
+.tree1 {
+    top:-30%;
+    left:24%;
+}
+.tree2 {
+    top:-40%;
+}
+.tree3 {
+    top:-35%;
+    left:77%;
+}
+
+
+
+ @keyframes opacity {
+     0%{ opacity: 0   }
+     50%{ opacity: 1}
+     100%{ opacity: 0}
+     
+ }
+  .sun {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      background: yellow;
+      border-radius: 50%;
+      animation: move 30s infinite;
+  }
+
+ .moon {
+     left: -30%;
+     top: 40%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: move 25s infinite;
+    animation-delay: 18s;
+ }
+
+@keyframes move {
+    0%{ left: -3%; top: 100%   }
+    50%{left: 45%; top:15%}
+    100%{  left:95%; top:100%;}
+
+}
+@keyframes cromatic {
+    0% {
+        background-color: #08090a;
+    }
+    25% {
+        background-color: rgba(98, 101, 38, 0.61);
+    }
+    40% {
+        background-color: rgba(239, 229, 92, 0.77);
+    }
+    45% {
+        background-color: #f8f47d;
+    }
+    50% {
+        background-color: rgba(22, 16, 11, 0.5);
+    }
+    80% {
+        background-color: #214285;
+    }
+    100% {
+        background-color: #08090a;
+    }
+}
